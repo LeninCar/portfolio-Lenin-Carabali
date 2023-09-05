@@ -12,6 +12,11 @@ canvas{
     touch-action: none;
 }
 
+:root {
+    --x: -8px;
+    --y: -8px;
+  }
+
 .info {
     width: 1000px; 
     text-align: center;
@@ -28,9 +33,9 @@ canvas{
     font-weight: 800;
     letter-spacing: 4px;
     text-shadow:
-      calc(-8px * -1) calc(-8px * -1) 0px  #7B5741,
-      calc(-8px * -2) calc(-8px * -2) 0px #A99887,
-      calc(-8px * -3) calc(-8px * -3) 0px #D7C4B7;
+    calc(var(--x) * -1) calc(var(--y) * -1) 0px #7B5741,
+    calc(var(--x) * -2) calc(var(--y) * -2) 0px #A99887,
+    calc(var(--x) * -3) calc(var(--y) * -3) 0px #D7C4B7;
 }
 
 .biography{
