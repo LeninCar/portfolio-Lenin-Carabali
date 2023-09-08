@@ -46,17 +46,17 @@ const Experience = () => { //usando destructuring
 
         <mesh ref={sphereRef}>
             <sphereGeometry args={[1, 32, 32]} />
-            <meshMatcapMaterial wireframe={true} color="#935116" />
+            <meshMatcapMaterial  color="#935116" />
         </mesh>
 
         <mesh ref={coneRef}>
             <coneGeometry args={[1, 2.4, 32, 5]} />
-            <meshLambertMaterial wireframe={true} color="#FFC300" />
+            <meshLambertMaterial  color="#FFC300" />
         </mesh>
 
         <mesh ref={torusRef}>
             <torusGeometry args={[0.9, 0.4, 32, 32]} />
-            <meshToonMaterial wireframe={true} color="#34495E" />
+            <meshToonMaterial  color="#34495E" />
         </mesh>
 
         <mesh ref={torusKnotRef}>
