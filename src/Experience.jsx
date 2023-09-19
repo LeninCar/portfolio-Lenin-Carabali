@@ -49,22 +49,6 @@ const Experience = () => { //usando destructuring
         <Room />
         <Gun />
 
-<<<<<<< HEAD
-        <mesh ref={sphereRef}>
-            <sphereGeometry args={[1, 32, 32]} />
-            <meshMatcapMaterial  color="#935116" />
-        </mesh>
-
-        <mesh ref={coneRef}>
-            <coneGeometry args={[1, 2.4, 32, 5]} />
-            <meshLambertMaterial  color="#FFC300" />
-        </mesh>
-
-        <mesh ref={torusRef}>
-            <torusGeometry args={[0.9, 0.4, 32, 32]} />
-            <meshToonMaterial  color="#34495E" />
-        </mesh>
-=======
         <group scale={[0.5, 0.5, 0.5]}>
             <mesh ref={sphereRef}>
                 <sphereGeometry args={[1, 32, 32]} />
@@ -80,7 +64,6 @@ const Experience = () => { //usando destructuring
                 <torusGeometry args={[0.9, 0.4, 32, 32]} />
                 <meshToonMaterial wireframe={true} color="#34495E" />
             </mesh>
->>>>>>> lenin
 
             <mesh ref={torusKnotRef}>
                 <torusKnotGeometry args={[ 0.9, 0.3, 34, 17]} />
