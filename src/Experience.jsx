@@ -1,9 +1,11 @@
 import { OrbitControls } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
+import MontyGator from "./Word/MontyGator";
+import Room from "./Word/Room";
+import Rock, { Gun } from "./Word/Gun";
 
 const Experience = () => { //usando destructuring
-    // const boxRef = useRef();
     const sphereRef = useRef();
     const coneRef = useRef();
     const torusRef = useRef();
@@ -31,11 +33,11 @@ const Experience = () => { //usando destructuring
         torusRef.current.rotation.x += 1 * delta;
         ringRef.current.rotation.y += 1 * delta;
         
-        sphereRef.current.position.x = 0;
-        coneRef.current.position.x = -4;
-        torusRef.current.position.x = 4;
-        torusKnotRef.current.position.x = 8;
-        ringRef.current.position.x = -8;
+        sphereRef.current.position.x = 1;
+        coneRef.current.position.x = 5;
+        torusRef.current.position.x = 10;
+        torusKnotRef.current.position.x = 15;
+        ringRef.current.position.x = 20;
     })
 
     return ( 
@@ -43,31 +45,36 @@ const Experience = () => { //usando destructuring
         <OrbitControls makeDefault />
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={2} />
+        <MontyGator />
+        <Room />
+        <Gun />
 
-        <mesh ref={sphereRef}>
-            <sphereGeometry args={[1, 32, 32]} />
-            <meshMatcapMaterial wireframe={true} color="#935116" />
-        </mesh>
+        <group scale={[0.5, 0.5, 0.5]}>
+            <mesh ref={sphereRef}>
+                <sphereGeometry args={[1, 32, 32]} />
+                <meshMatcapMaterial wireframe={true} color="#935116" />
+            </mesh>
+        
+            <mesh ref={coneRef}>
+                <coneGeometry args={[1, 2.4, 32, 5]} />
+                <meshLambertMaterial wireframe={true} color="#FFC300" />
+            </mesh>
 
-        <mesh ref={coneRef}>
-            <coneGeometry args={[1, 2.4, 32, 5]} />
-            <meshLambertMaterial wireframe={true} color="#FFC300" />
-        </mesh>
+            <mesh ref={torusRef}>
+                <torusGeometry args={[0.9, 0.4, 32, 32]} />
+                <meshToonMaterial wireframe={true} color="#34495E" />
+            </mesh>
 
-        <mesh ref={torusRef}>
-            <torusGeometry args={[0.9, 0.4, 32, 32]} />
-            <meshToonMaterial wireframe={true} color="#34495E" />
-        </mesh>
+            <mesh ref={torusKnotRef}>
+                <torusKnotGeometry args={[ 0.9, 0.3, 34, 17]} />
+                <meshDepthMaterial  wireframe={true} color="#27AE60" />
+            </mesh>
 
-        <mesh ref={torusKnotRef}>
-            <torusKnotGeometry args={[ 0.9, 0.3, 34, 17]} />
-            <meshDepthMaterial  wireframe={true} color="#27AE60" />
-        </mesh>
-
-        <mesh ref={ringRef}>
-            <ringGeometry args={[ 0.9, 0.3, 34]} />
-            <meshPhysicalMaterial wireframe={true} color="#3498DB" />
-        </mesh>
+            <mesh ref={ringRef}>
+                <ringGeometry args={[ 0.9, 0.3, 34]} />
+                <meshPhysicalMaterial wireframe={true} color="#3498DB" />
+            </mesh>
+        </group>
     </>
     );
 }
