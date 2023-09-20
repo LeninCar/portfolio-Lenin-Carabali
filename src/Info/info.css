@@ -1,13 +1,15 @@
 .container-info{
     display: flex;
-    width: 35%;
+    width: 50%;
     height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: absolute;
     z-index: 1;
-    padding: 0rem 8rem
+    right: 0;
+    justify-content: flex-start;
+    margin-top: 1rem;
 }
 
 .card-info{
@@ -15,7 +17,7 @@
     border-radius: 1rem;
     border-bottom: 8px solid #c45d4f;
     text-align: center;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(170, 158, 158, 0.8);
     box-shadow: 0 0 1rem rgba(45, 45, 45, 0.1);
 }
 

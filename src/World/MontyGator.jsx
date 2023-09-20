@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 const MontyGator = () => {
     const montyGatorRef = useRef();
     const montyGatorModel = useGLTF('/assets/models/monty_gator/scene.gltf')
-    console.log(montyGatorModel);
     const {animations} = montyGatorModel;
 
     const { actions } = useAnimations(animations, montyGatorRef);
