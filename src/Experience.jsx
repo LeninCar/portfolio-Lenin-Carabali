@@ -1,9 +1,9 @@
 import { OrbitControls } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import MontyGator from "./Word/MontyGator";
-import Room from "./Word/Room";
-import Rock, { Gun } from "./Word/Gun";
+import MontyGator from "./World/MontyGator";
+import Room from "./World/Room";
+import Rock, { Gun } from "./World/Gun";
 
 const Experience = () => { //usando destructuring
     const sphereRef = useRef();
