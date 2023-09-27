@@ -1,17 +1,16 @@
 import { useHelper } from "@react-three/drei";
 import { useMemo, useRef } from "react";
-import { HemisphereLightHelper, SpotLightHelper } from "three";
+import { HemisphereLightHelper } from "three";
 import { PointLightHelper } from "three";
 import { DirectionalLightHelper } from "three";
 
 const Lights = () => {
 
     const directionalLightRef = useRef();
-    useHelper(directionalLightRef, DirectionalLightHelper);
+    // useHelper(directionalLightRef, DirectionalLightHelper);
     
     const pointLightRef = useRef();
     // useHelper(pointLightRef, PointLightHelper, 2, "hotpink");
-
 
     const hemisphereLightRef = useRef();
     // useHelper(hemisphereLightRef, HemisphereLightHelper);
@@ -20,7 +19,7 @@ const Lights = () => {
             <directionalLight 
                 ref={directionalLightRef} 
                 position={[10, 10, 5]} 
-                intensity={2} color={0xff9700}
+                intensity={4} color={0xff9700}
                 castShadow
                 shadow-mapSize={[512, 512]}
                 shadow-camera-far={30}
@@ -29,7 +28,7 @@ const Lights = () => {
                 shadow-camera-top={9}   // Ajusta el valor positivo para ampliar la sombra hacia arriba
                 shadow-camera-bottom={-9}
                 />
-            <pointLight ref={pointLightRef} position={[-8, 2.5, -2]} intensity={40} color={"blue"} castShadow/>
+            <pointLight ref={pointLightRef} position={[-7.7, -0.4, -4]} intensity={40} color={"blue"}/>
             <hemisphereLight ref={hemisphereLightRef} position={[-8, 10, -2]} intensity={1} color={"gray"} />
         </>
 }

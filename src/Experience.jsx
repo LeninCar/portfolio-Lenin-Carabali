@@ -5,6 +5,7 @@ import MontyGator from "./World/MontyGator";
 import Room from "./World/Room";
 import Rock, { Gun } from "./World/Gun";
 import Lights from "./World/Lights";
+import Environments from "./World/Enviroments";
 
 const Experience = () => { //usando destructuring
     const sphereRef = useRef();
@@ -45,7 +46,8 @@ const Experience = () => { //usando destructuring
     <>
         <OrbitControls makeDefault />
         <Lights />
-         <BakeShadows /> {/*pausar sombras */}
+        <BakeShadows /> {/*pausar sombras */}
+        <Environments />
         <MontyGator castShadow position={[-8, -4.6, -4]} rotation-y={-Math.PI * -0.15} scale={2.4}/>
         <Room reciveShadow position={[-7, -5, -4]} rotation-y={-Math.PI * -0.09} scale={2.9}/>
         <Gun />
