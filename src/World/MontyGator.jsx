@@ -14,7 +14,7 @@ const MontyGator = () => {
     }, [])
 
     return (
-        <mesh position={[-8, -4.6, -4]} rotation-y={-Math.PI * -0.15} scale={2.4} ref={montyGatorRef}>
+        <mesh castShadow position={[-8, -4.6, -4]} rotation-y={-Math.PI * -0.15} scale={2.4} ref={montyGatorRef}>
             <primitive object={montyGatorModel.scene} />
         </mesh>
     )

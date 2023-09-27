@@ -4,6 +4,7 @@ import { useRef } from "react";
 import MontyGator from "./World/MontyGator";
 import Room from "./World/Room";
 import Rock, { Gun } from "./World/Gun";
+import Lights from "./World/Lights";
 
 const Experience = () => { //usando destructuring
     const sphereRef = useRef();
@@ -43,8 +44,7 @@ const Experience = () => { //usando destructuring
     return ( 
     <>
         <OrbitControls makeDefault />
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[10, 10, 5]} intensity={2} />
+        <Lights />
         <MontyGator />
         <Room />
         <Gun />

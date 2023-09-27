@@ -7,7 +7,7 @@ const App = () => {
     return (
         <>
                 <Info name={"Lenin Carabali"} biography={"Developer"} />
-                <Canvas camera={{ position: [1, 0, 9] }}>   
+                <Canvas shadows camera={{ position: [1, 0, 9] }}>   
                     {/* <Info title="Portfolio - Lenin Carabali"  */}
                      {/* biography="Lenin Esteban was here" /> */}
                     <Experience />
