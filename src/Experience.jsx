@@ -1,4 +1,4 @@
-import { OrbitControls } from "@react-three/drei"
+import { BakeShadows, OrbitControls } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import MontyGator from "./World/MontyGator";
@@ -45,8 +45,9 @@ const Experience = () => { //usando destructuring
     <>
         <OrbitControls makeDefault />
         <Lights />
-        <MontyGator />
-        <Room />
+         <BakeShadows /> {/*pausar sombras */}
+        <MontyGator castShadow position={[-8, -4.6, -4]} rotation-y={-Math.PI * -0.15} scale={2.4}/>
+        <Room reciveShadow position={[-7, -5, -4]} rotation-y={-Math.PI * -0.09} scale={2.9}/>
         <Gun />
 
         <group scale={[0.5, 0.5, 0.5]}>

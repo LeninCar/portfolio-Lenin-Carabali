@@ -1,5 +1,4 @@
 import { useHelper } from "@react-three/drei";
-// import { useControls } from "leva";
 import { useMemo, useRef } from "react";
 import { HemisphereLightHelper, SpotLightHelper } from "three";
 import { PointLightHelper } from "three";
@@ -8,41 +7,30 @@ import { DirectionalLightHelper } from "three";
 const Lights = () => {
 
     const directionalLightRef = useRef();
-    // useHelper(directionalLightRef, DirectionalLightHelper);
+    useHelper(directionalLightRef, DirectionalLightHelper);
     
     const pointLightRef = useRef();
-    useHelper(pointLightRef, PointLightHelper, 2, "hotpink");
+    // useHelper(pointLightRef, PointLightHelper, 2, "hotpink");
 
 
     const hemisphereLightRef = useRef();
-    useHelper(hemisphereLightRef, HemisphereLightHelper);
+    // useHelper(hemisphereLightRef, HemisphereLightHelper);
 
-    // const options = useMemo(()=>{
-    //     return{
-    //         intensitySL: {value: 1000, min:0, max: 1000, step: 1},
-    //         colorSL: {value: "white"},
-    //     }
-    // })
-
-    // const {intensitySL, colorSL} = useControls("Spot Light", options) 
     return <>
-            {/* <ambientLight intensity={0.3}/> */}
-            {/* <directionalLight ref={directionalLightRef} position={[10, 10, 5]} intensity={2} color={0xff9700} castShadow/> */}
-            {/* <directionalLight 
+            <directionalLight 
                 ref={directionalLightRef} 
                 position={[10, 10, 5]} 
                 intensity={2} color={0xff9700}
                 castShadow
-                shadow-mapSize={[256, 256]}
-                shadow-camera-far={20}
-                shadow-camera-left={-4}
-                shadow-camera-right={4}
-                shadow-camera-top={4}
-                shadow-camera-bottom={-4}
-
-                /> */}
+                shadow-mapSize={[512, 512]}
+                shadow-camera-far={30}
+                shadow-camera-left={-9} // Ajusta el valor negativo para ampliar la sombra a la izquierda
+                shadow-camera-right={9} // Ajusta el valor positivo para ampliar la sombra a la derecha
+                shadow-camera-top={9}   // Ajusta el valor positivo para ampliar la sombra hacia arriba
+                shadow-camera-bottom={-9}
+                />
             <pointLight ref={pointLightRef} position={[-8, 2.5, -2]} intensity={40} color={"blue"} castShadow/>
-            <hemisphereLight ref={hemisphereLightRef} position={[-8, 10, -2]} intensity={1} color={"gray"} castShadow />
+            <hemisphereLight ref={hemisphereLightRef} position={[-8, 10, -2]} intensity={1} color={"gray"} />
         </>
 }
 export default Lights;
