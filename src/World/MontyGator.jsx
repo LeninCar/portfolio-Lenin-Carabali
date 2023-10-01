@@ -70,4 +70,4 @@ const MontyGator = (props) => {
 
 }
 export default MontyGator;
-useGLTF.preload("/assets/models/monty_gator/scene.gltf");
+useGLTF.preload("/assets/models/monty_gator/monty_gator.glb");

@@ -1,11 +1,13 @@
 import { BakeShadows, OrbitControls } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber";
-import { useRef } from "react";
+import { Suspense, useRef } from "react";
 import MontyGator from "./World/MontyGator";
 import Room from "./World/Room";
 import Rock, { Gun } from "./World/Gun";
 import Lights from "./World/Lights";
 import Environments from "./World/Enviroments";
+import Text from "./World/Text";
+import { Laptop } from "./World/Laptop";
 
 const Experience = () => { //usando destructuring
     const sphereRef = useRef();
@@ -44,14 +46,21 @@ const Experience = () => { //usando destructuring
 
     return ( 
     <>
+    <Suspense fallback={null}>
         <OrbitControls makeDefault />
         <Lights />
         <BakeShadows /> {/*pausar sombras */}
         <Environments />
         <MontyGator castShadow position={[-8, -4.6, -4]} rotation-y={-Math.PI * -0.15} scale={2.4}/>
-        <Room reciveShadow position={[-7, -5, -4]} rotation-y={-Math.PI * -0.09} scale={2.9}/>
-        <Gun />
-
+        <Room reciveShadow position={[-7, -5, -4]} rotation-y={-Math.PI * -0.09} scale={2.9}>
+            <Text />
+        </Room>
+        <Gun position={[-11, -3.3, -2]} rotation-y={-Math.PI * -0.19} scale={0.09}/>
+        <Laptop position={[-4, -3.3, -0.7]} scale={2} rotation-y={-Math.PI * 0.8}>
+            <Text />
+        </Laptop>
+        
+    </Suspense>
         <group scale={[0.5, 0.5, 0.5]}>
             <mesh ref={sphereRef}>
                 <sphereGeometry args={[1, 32, 32]} />
@@ -78,6 +87,7 @@ const Experience = () => { //usando destructuring
                 <meshPhysicalMaterial wireframe={true} color="#3498DB" />
             </mesh>
         </group>
+    
     </>
     );
 }

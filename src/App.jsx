@@ -1,6 +1,7 @@
 import { Canvas} from "@react-three/fiber"
 import Experience from "./Experience"
 import Info from "./Info/Info"
+import { Loader } from "@react-three/drei"
 // import Info from "./Info"
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
                      {/* biography="Lenin Esteban was here" /> */}
                     <Experience />
                 </Canvas>
+                <Loader />
             
         </>
     )

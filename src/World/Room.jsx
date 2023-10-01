@@ -1,12 +1,18 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
-const { useGLTF } = require("@react-three/drei")
+const { useGLTF, useAnimations } = require("@react-three/drei")
 
 const Room = (props) => {
-    const montyGatorRef = useRef();
+    const roomRef = useRef();
     const {nodes, materials, animations} = useGLTF('/assets/models/room/room.glb')
+
+    const { actions } = useAnimations(animations, roomRef);
+    useEffect(() => {
+      const action = actions["Take 001"]
+      action.play()
+  }, [])
     return (
-        <group ref={montyGatorRef} {...props} dispose={null}>
+        <group ref={roomRef} {...props} dispose={null}>
       <group name="Sketchfab_Scene">
         <group
           name="Sketchfab_model"
@@ -647,9 +653,10 @@ const Room = (props) => {
           </group>
         </group>
       </group>
+      {props.children}
     </group>
     )
 
 }
 export default Room;
-useGLTF.preload("/assets/models/room/scene.gltf");
+useGLTF.preload("/assets/models/room/room.glb");

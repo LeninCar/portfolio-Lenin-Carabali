@@ -1,7 +1,6 @@
 .container-info{
     display: flex;
     width: 50%;
-    height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -10,6 +9,7 @@
     right: 0;
     justify-content: flex-start;
     margin-top: 1rem;
+    user-select: none;
 }
 
 .card-info{

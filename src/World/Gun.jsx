@@ -16,10 +16,7 @@ export function Gun(props) {
   return (
     <group {...props} dispose={null}>
       <mesh
-        position={[-6, -3.3, -2]} 
-        rotation-y={-Math.PI * -0.19}
         geometry={nodes.Object_2.geometry}
-        scale={0.09}
         /* // material={materials.Material__26}
         // rotation={[-Math.PI / 2, 0, 0]} */
       >
@@ -28,5 +25,4 @@ export function Gun(props) {
     </group>
   );
 }
-
 useGLTF.preload("/assets/models/gun/gun.glb");
