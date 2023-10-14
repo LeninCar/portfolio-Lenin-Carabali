@@ -52,9 +52,7 @@ const Experience = () => { //usando destructuring
         <BakeShadows /> {/*pausar sombras */}
         <Environments />
         <MontyGator castShadow position={[-8, -4.6, -4]} rotation-y={-Math.PI * -0.15} scale={2.4}/>
-        <Room reciveShadow position={[-7, -5, -4]} rotation-y={-Math.PI * -0.09} scale={2.9}>
-            <Text />
-        </Room>
+        <Room reciveShadow position={[-7, -5, -4]} rotation-y={-Math.PI * -0.09} scale={2.9} />
         <Gun position={[-11, -3.3, -2]} rotation-y={-Math.PI * -0.19} scale={0.09}/>
         <Laptop position={[-4, -3.3, -0.7]} scale={2} rotation-y={-Math.PI * 0.8}>
             <Text />
