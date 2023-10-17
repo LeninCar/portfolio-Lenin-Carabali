@@ -1,16 +1,24 @@
 import { Canvas} from "@react-three/fiber"
-import Experience from "./Experience"
+import Experience from "./World/Experience"
 import Info from "./Info/Info"
 import { Loader } from "@react-three/drei"
 // import Info from "./Info"
 
 const App = () => {
+
+    const cameraSettings = {
+        position: [1, 0, 9],
+        // fov: 60
+    }
+    
     return (
         <>
-                <Info name={"Lenin Carabali"} biography={"Developer"} />
-                <Canvas shadows camera={{ position: [1, 0, 9] }}>   
-                    {/* <Info title="Portfolio - Lenin Carabali"  */}
-                     {/* biography="Lenin Esteban was here" /> */}
+                <Info 
+                name={"Lenin Carabali"} 
+                biography={"Developer"} 
+                descripcion={"Estudiante de Ingeniría de Sistemas en la Universidad del Valle."} 
+                />
+                <Canvas shadows camera={cameraSettings}>   
                     <Experience />
                 </Canvas>
                 <Loader />
